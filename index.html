@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeCraftHub — Course Admin</title>
+    <title>CodeCraftHub: Your Learning Management Platform</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -139,7 +139,7 @@
         text-decoration: none;
       }
       .btn-primary {
-        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        background: #8B5CF6;
         color: #fff;
         box-shadow: 0 0 0 0 var(--accent-glow);
       }
@@ -171,7 +171,7 @@
       }
 
       .btn-success {
-        background: rgba(16,185,129,0.14);
+        background: #F59E0B;
         color: var(--success);
         border: 1px solid rgba(16,185,129,0.25);
       }
@@ -890,17 +890,15 @@
           return \`
             <div class="course-card" data-id="\${c.id}">
               <div class="card-header">
-                <div class="card-badge">\${emoji}</div>
+                <div class="card-badge">${emoji}</div>
                 <div class="card-actions">
-                  <button class="btn btn-ghost btn-sm btn-icon btn-edit" data-id="\${c.id}" title="Edit course">
+                  <button class="btn btn-ghost btn-sm btn-icon btn-edit" data-id="${c.id}" title="Edit course">
                     <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                   </button>
-                  <button class="btn btn-danger btn-sm btn-icon btn-delete" data-id="\${c.id}" title="Delete course">
-                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M3 6h18M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6M10 11v6M14 11v6M9 6V4a1 1 0 011-1h4a1 1 0 011 1v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  </button>
+                  <button class="btn btn-danger btn-sm btn-delete" onclick="handleDelete(${c.id})">Remove</button>
                 </div>
               </div>
-              <div class="card-title">\${escHtml(c.title)}</div>
+              <div class="card-title">${escHtml(c.title)}</div>
               <div class="card-instructor">
                 <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 \${escHtml(c.instructor || 'Unknown Instructor')}
