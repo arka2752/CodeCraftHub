@@ -27,7 +27,6 @@ This is the backend for the CodeCraftHub learning platform, built with Python an
 
 ## API Endpoints
 
--   **`GET /api/courses`**: Retrieve all courses.
 -   **`GET /api/courses/<id>`**: Retrieve a specific course by ID.
 -   **`POST /api/courses`**: Create a new course.
     -   Requires JSON body with `title` and `instructor`.
